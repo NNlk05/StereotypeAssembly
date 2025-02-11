@@ -1,2 +1,2 @@
 # SderotypeAssembly
-A Stereotype, Hackerly language 
+A stereotype, hackerly language built to resemble assembly language 
