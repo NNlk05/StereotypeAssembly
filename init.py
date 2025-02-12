@@ -1,5 +1,4 @@
 import sys
-import commands
 
 RAM_SIZE = 1024
 
@@ -9,6 +8,24 @@ file = open(file_name)
 # read the file
 file_text = file.read()
 file_text = file_text.lower()
+commands = ['add','sub', 'print', 'store', 'read', 'input', 'if', 'gt', 'lt', 'eq', 'goto', 'exit']
+
+file_lines = file_text.strip.split(';')
+ram = {}
+# init ram
+for id in range(0, RAM_SIZE):
+   ram[str(id)] =  HexNumber(0)
+
+class CommandTranslater:
+    def __init__(self, command, line_words):
+        if command not in command:
+            raise(f'SyntaxError at {program_counter}, unknown command.')
+        
+        self.command = command
+        translated_command = ''
+        if command == 'add':
+            if len(line_words) == 3:
+                
 
 class HexNumber:
     def __init__(num):
@@ -18,12 +35,6 @@ class HexNumber:
         return int(self.hex, 16)
 
 # main loop
-file_lines = file_text.strip.split(';')
-ram = {}
-# init ram
-for id in range(0, RAM_SIZE):
-   ram[str(id)] =  HexNumber(0)
-
 program_counter = 0
 while True:
     program_counter = program_counter + 1
