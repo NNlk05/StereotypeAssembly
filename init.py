@@ -10,13 +10,34 @@ file_text = file.read()
 file_text = file_text.lower()
 commands = ['add','sub', 'print', 'store', 'read', 'input', 'if', 'gt', 'lt', 'eq', 'goto', 'exit']
 
+
+
+def dec(num):
+    return int(num, 16)
+
 file_lines = file_text.strip.split(';')
 ram = {}
 # init ram
 for id in range(0, RAM_SIZE):
-   ram[str(id)] =  HexNumber(0)
+   ram[str(id)] =  0x0
 
-class CommandTranslater:
+def search_ram(index):
+    """
+    Reads the vRAM
+    """
+    return ram[index]
+
+def write_ram(index, text):
+    """
+    Writes to the vRAM
+    """
+    ram[index] = text
+
+
+class _CommandTranslater:
+    """
+    Eval the code
+    """
     def __init__(self, command, line_words):
         if command not in command:
             raise(f'SyntaxError at {program_counter}, unknown command.')
@@ -24,15 +45,13 @@ class CommandTranslater:
         self.command = command
         translated_command = ''
         if command == 'add':
-            if len(line_words) == 3:
-                
+            if len(line_words) == 4:
+                _args = line_words[1], line_words[2]
+                _output = line_words[3]
+                write_ram(dec(_output), )
 
-class HexNumber:
-    def __init__(num):
-       self.hex = hex(num)
-       self.dec = nub
-    def read_dec(self):
-        return int(self.hex, 16)
+
+
 
 # main loop
 program_counter = 0
@@ -45,7 +64,7 @@ while True:
         int(line_words[0])
     except ValueError:
         raise(f'Error at line {program_counter}: lines must start with a number.')
-    # Translate the code into python 
+    # Eval the code 
     for line_word in line_words:
         if len(line_words) == 0 or line_word == ';':
             continue
