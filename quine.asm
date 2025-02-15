@@ -1,0 +1,5 @@
+0 store 0x0 "0 store 0x0 ";
+1 store 0x1 "quine.asm";
+2 print 0x0;
+3 print 0x1;
+4 exit;

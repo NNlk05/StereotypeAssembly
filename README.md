@@ -45,7 +45,7 @@ Replace `<filename>` with the name of your StereotypeAssembly program file.
 
 This program prints "Hello, World!" to the console.
 
-Create a file named `hello_world.asm` with the following content:
+Find the named `hello_world.asm`, it should look like: :
 
 ```asm
 0 print "Hello, World!";
@@ -62,7 +62,7 @@ python init.py hello_world.asm
 
 A quine is a program that outputs its own source code.
 
-Create a file named `quine.asm` with the following content:
+Find the named `quine.asm`, it should look like: :
 
 ```asm
 0 store 0x0 "0 store 0x0 ";
@@ -82,7 +82,7 @@ python init.py quine.asm
 
 A truth-machine is a program that asks for input. If the input is 0, it outputs 0 and terminates. If the input is 1, it outputs 1 indefinitely.
 
-Create a file named `truth_machine.asm` with the following content:
+Find the named `truth_machine.asm`, it should look like: :
 
 ```asm
 0 input 0x0;
