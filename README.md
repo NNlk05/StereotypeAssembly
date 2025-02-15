@@ -34,7 +34,7 @@ cd StereotypeAssembly
 To run a StereotypeAssembly program, use the following command:
 
 ```bash
-python init.py <filename>
+python init.min.py <filename>
 ```
 
 Replace `<filename>` with the name of your StereotypeAssembly program file.
@@ -55,7 +55,7 @@ Find the named `hello_world.asm`, it should look like: :
 Run the example program:
 
 ```bash
-python init.py hello_world.asm
+python init.min.py hello_world.asm
 ```
 
 #### Quine
@@ -75,7 +75,7 @@ Find the named `quine.asm`, it should look like: :
 Run the example program:
 
 ```bash
-python init.py quine.asm
+python init.min.py quine.asm
 ```
 
 #### Truth-machine
@@ -97,7 +97,7 @@ Find the named `truth_machine.asm`, it should look like: :
 Run the example program:
 
 ```bash
-python init.py truth_machine.asm
+python init.min.py truth_machine.asm
 ```
 
 ## Language Syntax
